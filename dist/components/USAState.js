@@ -27,8 +27,9 @@
 
   var USAState = function USAState(props) {
     return _react2.default.createElement(
-      "path",
-      { d: props.dimensions, fill: props.fill, "data-name": props.state, className: props.state + " state tooltip", onClick: props.onClickState },
+      "div",
+      { className: "tooltip" },
+      _react2.default.createElement("path", { d: props.dimensions, fill: props.fill, "data-name": props.state, className: props.state + " state", onClick: props.onClickState }),
       _react2.default.createElement(
         "span",
         { className: "tooltiptext" },
