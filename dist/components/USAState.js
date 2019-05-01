@@ -32,7 +32,7 @@
             _react2.default.createElement(
                 "title",
                 null,
-                props.state
+                props.title
             )
         );
     };

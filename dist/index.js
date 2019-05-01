@@ -101,6 +101,11 @@
         }
 
         return _this.props.defaultFill;
+      }, _this.stateTitle = function (state) {
+        if (_this.props.customize && _this.props.customize[state] && _this.props.customize[state].title) {
+          return _this.props.customize[state].title;
+        }
+        return state;
       }, _this.stateClickHandler = function (state) {
         if (_this.props.customize && _this.props.customize[state] && _this.props.customize[state].clickHandler) {
           return _this.props.customize[state].clickHandler;
@@ -109,7 +114,7 @@
       }, _this.buildPaths = function () {
         var paths = [];
         for (var stateKey in _usaMapDimensions2.default) {
-          var path = _react2.default.createElement(_USAState2.default, { key: stateKey, dimensions: _usaMapDimensions2.default[stateKey]["dimensions"], state: stateKey, fill: _this.fillStateColor(stateKey), onClickState: _this.stateClickHandler(stateKey) });
+          var path = _react2.default.createElement(_USAState2.default, { key: stateKey, dimensions: _usaMapDimensions2.default[stateKey]["dimensions"], state: stateKey, title: _this.stateTitle(stateKey), fill: _this.fillStateColor(stateKey), onClickState: _this.stateClickHandler(stateKey) });
           paths.push(path);
         };
         return paths;
